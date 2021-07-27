@@ -2,15 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import Home from "./pages/home/home";
 import { store } from "./app/store";
 import { Provider } from "react-redux";
 import * as serviceWorker from "./serviceWorker";
+import Shared from "./pages/shared/Shared";
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Home />
+      <Shared />
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")

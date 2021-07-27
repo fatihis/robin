@@ -14,14 +14,15 @@
     "react": "^16.14.0",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.3",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "reacto-form": "^1.5.1",
     "styled-components": "^3.4.10"
   },
   "scripts": {
     "start": "craco start",
-     "build": "craco build",
-     "test": "craco test",
+    "build": "craco build",
+    "test": "craco test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
