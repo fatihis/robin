@@ -4,5 +4,30 @@
 .shared-main-wrapper{
     height: 100vh;
     width: 100%;
-    background-color: aqua;
+    
+}
+.shared-header{
+
+}
+
+.shared-logo-container{
+    
+    
+}
+
+.shared-logo{
+    max-width: 115px;
+}
+
+.shared-nav-elements-container{
+    flex:3;
+
+}
+
+.shared-header-icons{
+
+}
+
+.shared-icon-container{
+    
 }
