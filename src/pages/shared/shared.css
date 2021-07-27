@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.shared-main-wrapper{
+    height: 100vh;
+    width: 100%;
+    background-color: aqua;
+}
