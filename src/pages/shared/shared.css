@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 .shared-main-wrapper{
-    height: 100vh;
+    height: 100%;
     width: 100%;
     
 }

@@ -2,11 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 .home-main-wrapper{
-    height: 100vh;
+    height: 100%;
     width: 100%;
     background-color: aqua;
 }
+
 .home-banner-container{
     background-color: black;
     height: 28rem;
 }
+.home-perks-wrapper{
+    height: 8rem;
+    background-color: blue;
+    margin-top: 2rem;
+}
+
+.home-perks-container{
+    width: 50%;
+}
+
+.home-perk-item{
+    background-color: purple;
+}
+
+.home-perk-item-image-container{
+    
+}
+
+.home-perk-item-image{
+    max-width: 60%;
+}
+
+.home-perk-item-text-container{
+    flex:2;
+}
+
+.home-featured-wrapper{
+    height: 20rem;
+    background-color: blue;
+    margin-top: 2rem;
+}
+
+.home-featured-container{
+    width: 80%;
+}
+
