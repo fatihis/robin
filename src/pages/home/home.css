@@ -4,7 +4,7 @@
 .home-main-wrapper{
     height: 100%;
     width: 100%;
-    background-color: aqua;
+
 }
 
 .home-banner-container{
@@ -13,16 +13,16 @@
 }
 .home-perks-wrapper{
     height: 8rem;
-    background-color: blue;
+
     margin-top: 2rem;
 }
 
 .home-perks-container{
-    width: 50%;
+    width: 60%;
 }
 
 .home-perk-item{
-    background-color: purple;
+
 }
 
 .home-perk-item-image-container{
@@ -37,13 +37,55 @@
     flex:2;
 }
 
+.home-perk-item-text-title{
+
+}
+
+.home-perk-item-text{
+    color: #A8A8A8;
+}
+
+
 .home-featured-wrapper{
     height: 20rem;
-    background-color: blue;
     margin-top: 2rem;
 }
 
 .home-featured-container{
     width: 80%;
+}
+
+.home-featured-item{
+
+}
+
+.home-featured-item-one{
+    background-color: #FFC481;
+}
+
+.home-featured-item-two{
+    background-color: #81C4FF;
+}
+
+.home-featured-item-image-container{
+
+}
+
+.home-featured-item-image{
+    max-height: 100%;
+    padding: 1rem;
+}
+
+.home-featured-item-text-container{
+
+}
+
+.home-featured-item-inner-text-container{
+    max-width: 60%;
+}
+
+.home-featured-item-text{
+    color:white;
+    letter-spacing: 2px;
 }
 
