@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.pd-main-container {
+
+}
+
+.pd-showcase-container{
+
+}
+
+.pd-showcase-img-wrapper{
+
+}
+
+.pd-showcase-img-thumbnail-container{
+    flex: 0 1 30%;
+    
+}
+
+.pd-showcase-img-big-container{
+    flex: 1;
+}
+
+.pd-showcase-detail-container{
+
+}
+
+
