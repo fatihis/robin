@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.shopping-cart-main-wrapper{
+    
+}
+
+.shopping-cart-proceed-button{
+ background-color: #FBB03B;
+}
+
+.shopping-cart-proceed-button:hover{
+    background-color: #f3a01a;
+}
+
+.showcase-item-add-button{
+    bottom : 1.5rem;
+    right: 1rem;
+    background-color: #81C4FF;
+}
+
+.showcase-item-add-button:hover{
+    background-color: hsl(208, 80%, 67%);
+}
