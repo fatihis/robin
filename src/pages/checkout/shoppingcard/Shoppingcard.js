@@ -5,7 +5,7 @@ import blackhoodie from "../../../assets/blackhoodie2x.png";
 
 export default function Shoppingcard() {
   return (
-    <div className="shopping-cart-main-wrapper  px-64 py-18  w-full h-full flex ">
+    <div className="shopping-cart-main-wrapper  px-64 py-18  w-full h-full flex lg:p-0 ">
       <div className="shopping-cart-main-container  h-screen w-full  flex flex-col">
         <h2 className="shopping-cart-header-text mt-2 mb-2 font-bold text-xl">
           Shopping Cart
@@ -126,7 +126,12 @@ export default function Shoppingcard() {
           <span className="mr-2">Total cost:</span>
           <span className="font-bold">$159,98</span>
           <div className="flex-1  flex justify-end">
-            <button className="shopping-cart-proceed-button absolute text-white font-bold py-2 px-4 rounded-full">
+            <button
+              onClick={() =>
+                (window.location.pathname = "/address-and-delivery/1231212")
+              }
+              class="shopping-cart-proceed-button absolute text-white font-bold py-2 px-4 mt-2 rounded-full"
+            >
               Proceed
             </button>
           </div>

@@ -7,9 +7,10 @@ import descIcon from "../../assets/descriptionicon.png";
 import productcleaning from "../../assets/productcleaning.png";
 import classNames from "classnames";
 import Magnifier from "react-magnifier";
+import { useParams } from "react-router-dom";
 export default function Productdetail() {
   const tagOne = true;
-  const productId = "121223";
+  let { productId } = useParams();
   const hasDiscount = true;
   const product_price = "89.90";
   const discounted_product_price = "119.90";
@@ -20,6 +21,7 @@ export default function Productdetail() {
   const [chooseSizeState, setchooseSizeState] = useState(false);
   const [quantityState, setquantityState] = useState(0);
   const [bigImageSource, setbigImageSource] = useState(whitehoodie);
+
   const setBigImage = (img) => {
     setbigImageSource(img);
   };
@@ -43,26 +45,30 @@ export default function Productdetail() {
     activeSize: chooseSizeState,
     passiveSize: !chooseSizeState,
   });
+  var chooseSizeWrapperClass = classNames({
+    activeWrapperSize: chooseSizeState,
+    passiveWrapperSize: !chooseSizeState,
+  });
   const sizesOnClick = () => {
     setchooseSizeState(!chooseSizeState);
   };
   const sizeOnClick = (size) => {
-    if (size == "s") {
+    if (size === "s") {
       setsState(true);
       setmState(false);
       setlState(false);
       setxlState(false);
-    } else if (size == "m") {
+    } else if (size === "m") {
       setsState(false);
       setmState(true);
       setlState(false);
       setxlState(false);
-    } else if (size == "l") {
+    } else if (size === "l") {
       setsState(false);
       setmState(false);
       setlState(true);
       setxlState(false);
-    } else if (size == "xl") {
+    } else if (size === "xl") {
       setsState(false);
       setmState(false);
       setlState(false);
@@ -71,20 +77,20 @@ export default function Productdetail() {
   };
 
   const updateCart = (action) => {
-    if (action == "+") {
+    if (action === "+") {
       setquantityState(quantityState + 1);
-    } else if (action == "-") {
+    } else if (action === "-") {
       if (quantityState > 0) {
         setquantityState(quantityState - 1);
       }
     }
   };
   return (
-    <div className="pd-main-container px-24  w-full h-full flex flex-col">
-      <div className="pd-showcase-container h-screen  flex">
-        <div className="pd-showcase-img-wrapper flex flex-1">
-          <div className="pd-showcase-img-thumbnail-container p-8 w-full">
-            <div className="pd-showcase-img-thumbnail w-full p-2 h-32">
+    <div className="pd-main-container px-24  w-full h-full flex flex-col xl:p-0">
+      <div className="pd-showcase-container h-screen  flex lg:flex-col lg:h-auto ">
+        <div className="pd-showcase-img-wrapper flex flex-1 md:flex-col-reverse">
+          <div className="pd-showcase-img-thumbnail-container p-8 w-full md:flex md:flex-wrap">
+            <div className="pd-showcase-img-thumbnail w-full p-2 h-32 md:w-auto">
               <img
                 draggable={false}
                 onClick={() => setBigImage(whitehoodie)}
@@ -93,7 +99,7 @@ export default function Productdetail() {
                 alt="product thumbnail one"
               ></img>
             </div>
-            <div className="pd-showcase-img-thumbnail w-full p-2 h-32">
+            <div className="pd-showcase-img-thumbnail w-full p-2 h-32 md:w-auto">
               <img
                 draggable={false}
                 onClick={() => setBigImage(blackhoodie)}
@@ -102,7 +108,7 @@ export default function Productdetail() {
                 alt="product thumbnail two"
               ></img>
             </div>
-            <div className="pd-showcase-img-thumbnail w-full p-2 h-32">
+            <div className="pd-showcase-img-thumbnail w-full p-2 h-32 md:w-auto">
               <img
                 draggable={false}
                 onClick={() => setBigImage(whitehoodie)}
@@ -111,7 +117,7 @@ export default function Productdetail() {
                 alt="product thumbnail three"
               ></img>
             </div>
-            <div className="pd-showcase-img-thumbnail w-full p-2 h-32">
+            <div className="pd-showcase-img-thumbnail w-full p-2 h-32 md:w-auto">
               <img
                 draggable={false}
                 onClick={() => setBigImage(blackhoodie)}
@@ -121,7 +127,7 @@ export default function Productdetail() {
               ></img>
             </div>
           </div>
-          <div className="pd-showcase-img-big-container w-full">
+          <div className="pd-showcase-img-big-container w-full ">
             {/* <img
               className="home-featured-item-image"
               src={whitehoodie}
@@ -145,7 +151,7 @@ export default function Productdetail() {
               </span>{" "}
             </div>
           </div>
-          <div className="pd-showcase-detail-name-price-wrapper  flex w-full h-20 mt-6 ">
+          <div className="pd-showcase-detail-name-price-wrapper  flex w-full h-20 mt-6 xl:h-36 xl:flex-col">
             <div className="pd-showcase-detail-name-price-container flex-col flex flex-1  w-full h-full">
               <div className="pd-showcase-detail-name-container flex-1 ">
                 <span className="pd-showcase-detail-name flex-1">
@@ -154,17 +160,17 @@ export default function Productdetail() {
               </div>
               <div className="pd-showcase-detail-price-container flex">
                 {hasDiscount && (
-                  <span className="pd-showcase-detail-price pointer-events-none pd-showcase-detail-price-discounted ">
+                  <span className="pd-showcase-detail-price pointer-events-none pd-showcase-detail-price-discounted xl:text-xl">
                     {product_price} ₺
                   </span>
                 )}
                 {!hasDiscount && (
-                  <span className="pd-showcase-detail-price pointer-events-none">
+                  <span className="pd-showcase-detail-price pointer-events-none xl:text-xl">
                     {product_price} ₺
                   </span>
                 )}
                 {hasDiscount && (
-                  <span className="pd-showcase-detail-old-price pointer-events-none line-through space-x-12 ">
+                  <span className="pd-showcase-detail-old-price pointer-events-none line-through space-x-12 xl:text-xl ">
                     {" "}
                     {discounted_product_price} ₺
                   </span>
@@ -182,59 +188,61 @@ export default function Productdetail() {
               Sizes:
             </span>
             <div className="pd-showcase-detail-sizes-container w-full h-10 flex flex">
-              <div className="pd-showcase-detail-sizes-set w-full h-10">
+              <div className="pd-showcase-detail-sizes-set w-full h-10 flex ">
                 <button
                   onClick={() => sizesOnClick()}
-                  className={
+                  class={
                     " border-2 hover:bg-gray-300 py-2 px-4 text-black text-xs font-bold rounded-full"
                   }
                 >
                   CHOOSE SIZE
                 </button>
-                <button
-                  onClick={() => sizeOnClick("s")}
-                  className={
-                    "ml-4 border-2 hover:bg-gray-300 py-2 px-4 text-black text-xs font-bold rounded-full " +
-                    sBtnClass +
-                    " " +
-                    chooseSizeClass
-                  }
-                >
-                  S
-                </button>
-                <button
-                  onClick={() => sizeOnClick("m")}
-                  className={
-                    "ml-4 border-2 hover:bg-gray-300 py-2 px-4 text-black text-xs font-bold rounded-full " +
-                    mBtnClass +
-                    " " +
-                    chooseSizeClass
-                  }
-                >
-                  M
-                </button>
-                <button
-                  onClick={() => sizeOnClick("l")}
-                  className={
-                    "ml-4 border-2 hover:bg-gray-300 py-2 px-4 text-black text-xs font-bold rounded-full " +
-                    lBtnClass +
-                    " " +
-                    chooseSizeClass
-                  }
-                >
-                  L
-                </button>
-                <button
-                  onClick={() => sizeOnClick("xl")}
-                  class={
-                    "ml-4 border-2 hover:bg-gray-300 py-2 px-4 text-black text-xs font-bold rounded-full " +
-                    xlBtnClass +
-                    " " +
-                    chooseSizeClass
-                  }
-                >
-                  XL
-                </button>
+                <div className="${chooseSizeWrapperClass}">
+                  <button
+                    onClick={() => sizeOnClick("s")}
+                    class={
+                      "ml-4 border-2 hover:bg-gray-300 py-2 px-4 text-black text-xs font-bold rounded-full " +
+                      sBtnClass +
+                      " " +
+                      chooseSizeClass
+                    }
+                  >
+                    S
+                  </button>
+                  <button
+                    onClick={() => sizeOnClick("m")}
+                    class={
+                      "ml-4 border-2 hover:bg-gray-300 py-2 px-4 text-black text-xs font-bold rounded-full " +
+                      mBtnClass +
+                      " " +
+                      chooseSizeClass
+                    }
+                  >
+                    M
+                  </button>
+                  <button
+                    onClick={() => sizeOnClick("l")}
+                    class={
+                      "ml-4 border-2 hover:bg-gray-300 py-2 px-4 text-black text-xs font-bold rounded-full " +
+                      lBtnClass +
+                      " " +
+                      chooseSizeClass
+                    }
+                  >
+                    L
+                  </button>
+                  <button
+                    onClick={() => sizeOnClick("xl")}
+                    class={
+                      "ml-4 border-2 hover:bg-gray-300 py-2 px-4 text-black text-xs font-bold rounded-full " +
+                      xlBtnClass +
+                      " " +
+                      chooseSizeClass
+                    }
+                  >
+                    XL
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -267,7 +275,7 @@ export default function Productdetail() {
               <div className="pd-showcase-detail-add-to-cart-button-container h-full w-32 rounded-full flex ">
                 <button
                   // onClick={() => sizeOnClick("l")}
-                  className="pd-showcase-detail-add-to-cart-button ml-4 border-2 py-2 px-4 text-black w-32 text-xs font-bold rounded-full "
+                  class="pd-showcase-detail-add-to-cart-button ml-4 border-2 py-2 px-4 text-black w-32 text-xs font-bold rounded-full "
                 >
                   ADD TO CART
                 </button>
@@ -276,7 +284,7 @@ export default function Productdetail() {
           </div>
         </div>
       </div>
-      <div className="pd-showcase-detail-description-wrapper h-48 w-full self self-center flex">
+      <div className="pd-showcase-detail-description-wrapper h-48 w-full self self-center flex mt-3 xl:h-auto">
         <div className="pd-showcase-detail-description-container h-full flex-1 flex flex-col items-center justify-center">
           <div className="pd-showcase-detail-description-img-container flex-1 flex items-center justify-center">
             <img

@@ -1,5 +1,6 @@
 import React from "react";
 import "./home.css";
+import json from "../../utils/products/products.json";
 import shippingicon from "../../assets/shipping2x.png";
 import smileicon from "../../assets/happy2x.png";
 import moneybackicon from "../../assets/moneyback2x.png";
@@ -8,16 +9,26 @@ import blackhoodie from "../../assets/blackhoodie2x.png";
 import ShowcaseItem from "../../components/ShowcaseItem/ShowcaseItem";
 export default function home() {
   const alerter = () => {
-    alert("hey");
+    window.location.pathname = "/p/11223344";
   };
+  //fetching featured products
+  // fetch("../../utils/products/products.json", {
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //     Accept: "application/json",
+  //   },
+  // })
+  //   .then((response) => response.json())
+  //   .then((data) => console.log(data));
+
   return (
     <div className="home-main-wrapper">
       {/* banner start */}
       <div className="home-banner-container w-full"></div>
       {/* banner end */}
       {/* perks start */}
-      <div className="home-perks-wrapper w-full flex justify-center items-center">
-        <div className="home-perks-container flex h-full">
+      <div className="home-perks-wrapper w-full flex justify-center items-center md:h-full">
+        <div className="home-perks-container flex h-full md:w-full sm:flex-col sm:gap-2">
           <div className="home-perk-item flex flex-1">
             <div className="home-perk-item-image-container flex justify-center items-start flex-1">
               <img
@@ -74,10 +85,10 @@ export default function home() {
       </div>
       {/* perks end */}
       {/* features start */}
-      <div className="home-featured-wrapper w-full flex justify-center items-center">
-        <div className="home-featured-container flex h-full bg-black">
+      <div className="home-featured-wrapper w-full flex justify-center items-center h-auto">
+        <div className="home-featured-container flex h-full bg-black md:flex-col sm:h-full">
           <div className="home-featured-item home-featured-item-one flex-1 flex">
-            <div className="home-featured-item-image-container flex-1">
+            <div className="home-featured-item-image-container flex-1 ">
               <img
                 className="home-featured-item-image"
                 src={blackhoodie}
@@ -86,7 +97,7 @@ export default function home() {
             </div>
             <div className="home-featured-item-text-container flex justify-center items-center flex-1">
               <div className="home-featured-item-inner-text-container flex-1">
-                <h5 className="home-featured-item-text font-bold text-xl mb-4">
+                <h5 className="home-featured-item-text font-bold text-xl mb-4 sm:text-sm">
                   New collection available now
                 </h5>
                 <button class="bg-white hover:bg-gray-300 text-black text-xs font-bold py-2 px-4 rounded-full">
@@ -105,7 +116,7 @@ export default function home() {
             </div>
             <div className="home-featured-item-text-container flex justify-center items-center flex-1">
               <div className="home-featured-item-inner-text-container flex-1">
-                <h5 className="home-featured-item-text font-bold text-xl mb-4">
+                <h5 className="home-featured-item-text font-bold text-xl mb-4 sm:text-sm">
                   Redefining the modern design
                 </h5>
                 <button class="bg-white hover:bg-gray-300 text-black text-xs font-bold py-2 px-4 rounded-full">
@@ -120,7 +131,7 @@ export default function home() {
       {/* showcase start */}
 
       <div className="home-showcase-wrapper w-full flex justify-center items-center">
-        <div className="home-showcase-container flex space-x-8 h-full">
+        <div className="home-showcase-container flex  h-full flex-wrap justify-center">
           <ShowcaseItem
             itemImage={whitehoodie}
             itemText={"Rob"}

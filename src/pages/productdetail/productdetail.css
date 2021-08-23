@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 *{
-    transition: 200ms all;
+    transition: 100ms all;
 }
 .pd-main-container {
 
@@ -118,12 +118,20 @@ color: white;
 }
 
 .passiveSize{
-    height: 0px;
-    width: 0px;
-    font-size: 0px;
-    border-width: 0px;
+    height: 0px !important;
+    width: 0px !important;
+    font-size: 0px !important;
+    border-width: 0px !important;
     pointer-events: none;
     background-color: none;
+}
+
+.activeWrapperSize{
+    width: "100%";
+}
+
+.passiveWrapperSize{
+    width: 0px;
 }
 
 .pd-showcase-detail-add-to-cart-quantity{
