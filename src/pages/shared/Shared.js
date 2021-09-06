@@ -1,6 +1,7 @@
 import React from "react";
-import Home from "../home/Home";
+
 import Listing from "../listing/Listing";
+//import Home from "../home/Home";
 import Shoppingcard from "../checkout/shoppingcard/Shoppingcard";
 import "./shared.css";
 import Productdetail from "../productdetail/Productdetail";
@@ -71,7 +72,7 @@ export default function Shared() {
         </div>
       </div>
       <Switch>
-        <Route path="/" exact component={Home} />
+        <Route path="/" exact component={Productdetail} />
         <Route path="/products" component={Listing} />
         <Route path="/p/:productId" component={Productdetail} />
         <Route path="/cart/:uid" component={Shoppingcard} />
