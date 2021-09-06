@@ -7,7 +7,7 @@ import moneybackicon from "../../assets/moneyback2x.png";
 import whitehoodie from "../../assets/whitehoodie2x.png";
 import blackhoodie from "../../assets/blackhoodie2x.png";
 import ShowcaseItem from "../../components/ShowcaseItem/ShowcaseItem";
-export default function home() {
+export default function Home() {
   const alerter = () => {
     window.location.pathname = "/p/11223344";
   };
